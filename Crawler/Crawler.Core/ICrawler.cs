@@ -7,6 +7,6 @@ namespace Crawler.Core
 {
     public interface ICrawler
     {
-        Task Crawler();
+        Task StartCrawler();
     }
 }

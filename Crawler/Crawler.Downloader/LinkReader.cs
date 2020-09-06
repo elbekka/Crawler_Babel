@@ -21,11 +21,11 @@ namespace Crawler.Downloader
                 _regex = new Regex(request.Regex);
             }
         }
-        private async Task<IEnumerable<string>> GetPageLinks(string url, bool needMatch = true)
+        public async Task<IEnumerable<string>> GetLinks( bool needMatch = true)
         {
 
                 HtmlWeb web = new HtmlWeb();
-                var htmlDocument = await web.LoadFromWebAsync(url);
+                var htmlDocument = await web.LoadFromWebAsync(_request.Url);
 
                 var linkList = htmlDocument.DocumentNode
                                    .Descendants("a")
@@ -33,14 +33,15 @@ namespace Crawler.Downloader
                                    .Where(u => !string.IsNullOrEmpty(u))
                                    .Distinct();
 
-                if (_regex != null)
-                    linkList = linkList.Where(x => _regex.IsMatch(x));
+                if (needMatch &&  _regex != null)
+                    linkList = linkList.Where(link => _regex.IsMatch(link));
 
                 return linkList;
         }
     }
     public class Request
     {
+        public string OriginalUrl { get; set; }
         public string Url { get; set; }
         public string Regex { get; set; }
         public long TimeOut { get; set; }

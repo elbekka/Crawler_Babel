@@ -8,6 +8,6 @@ namespace Crawler.Processor
 {
    public interface IProcessor
     {
-        Task<IEnumerable<string>> Process(HtmlDocument document);
+        Task<BabelPoco> Process(HtmlDocument document);
     }
 }

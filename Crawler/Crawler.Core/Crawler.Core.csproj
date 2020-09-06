@@ -4,4 +4,10 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Crawler.Downloader\Crawler.Downloader.csproj" />
+    <ProjectReference Include="..\Crawler.Pipeline\Crawler.Pipeline.csproj" />
+    <ProjectReference Include="..\Crawler.Processor\Crawler.Processor.csproj" />
+  </ItemGroup>
+
 </Project>
