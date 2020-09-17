@@ -21,6 +21,11 @@ namespace Crawler.Downloader
                 _regex = new Regex(request.Regex);
             }
         }
+        /// <summary>
+        /// Obtiene todos los links de la url
+        /// </summary>
+        /// <param name="needMatch">Realizar el filtro o no</param>
+        /// <returns>Lista de links filtrado o no segun  <paramref name="needMatch"/></returns>
         public async Task<IEnumerable<string>> GetLinks( bool needMatch = true)
         {
 

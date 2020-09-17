@@ -9,7 +9,11 @@ namespace Crawler.Pipeline
     public class Pipeline : IPipeline
     {
 
-
+        /// <summary>
+        /// Recive los POCOs y los pasa a un formato json.
+        /// </summary>
+        /// <param name="babelPocos">Lista de POCOs</param>
+        /// <returns></returns>
         public async Task Run(IEnumerable<BabelPoco> babelPocos)
         {
             var options = new JsonSerializerOptions()

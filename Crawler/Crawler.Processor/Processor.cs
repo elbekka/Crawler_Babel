@@ -9,6 +9,11 @@ namespace Crawler.Processor
 {
     public class Processor : IProcessor
     {
+        /// <summary>
+        /// Crea un nuevo poco y selecciona la informacion que deseamos extraer.
+        /// </summary>
+        /// <param name="document">Recibe el documento de HAP</param>
+        /// <returns></returns>
         public async Task<BabelPoco> Process(HtmlDocument document)
         {
             BabelPoco babelPoco = new BabelPoco();

@@ -19,6 +19,10 @@ namespace Crawler.Core
         {
 
         }
+        /// <summary>
+        /// Inicia el crawler,obtiene los links de la pagina inicial,y a continuacion los procesa
+        /// </summary>
+        /// <returns></returns>
         public async Task StartCrawler()
         {
             var reader = new LinkReader(Request);

@@ -8,7 +8,11 @@ namespace Crawler.Downloader
     public class Downloader : IDownloader
     {
         public string DownloadPath { get; set; }
-
+        /// <summary>
+        /// Descarga el documento html 
+        /// </summary>
+        /// <param name="crawlUrl">Url</param>
+        /// <returns></returns>
         public async Task<HtmlDocument> Download(string crawlUrl)
         {
             var htmlDocument = new HtmlDocument();
